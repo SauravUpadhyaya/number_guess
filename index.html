@@ -325,33 +325,7 @@
 
         <!-- Winner Screen -->
         <div class="winner-screen" id="winnerScreen">
-            <div class="emoji" id="winnerEmoji"></div>
-            <h2 id="winnerMessage"></h2>
-            <p id="winnerDetails"></p>
-            <div class="button-group">
-                <button onclick="playAgain()">Play Again</button>
-                <button class="secondary" onclick="resetGame()">Change Name</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        let game = {
-            playerName: '',
-            playerNumber: null,
-            computerNumber: Math.floor(Math.random() * 100) + 1,
-            round: 1,
-            computerGuesses: new Set(),
-            gamePhase: 'setup', // setup, playing, finished
-            currentTurn: 'player', // player or computer
-            playerFound: false,
-            computerFound: false
-        };
-
-        function startGame() {
-            game.playerName = document.getElementById('playerName').value || 'Player';
-            document.querySelector('.setup-screen').classList.remove('active');
-            document.querySelector('.game-screen').classList.add('active');
+                    <link rel="stylesheet" href="style.css">
         }
 
         function setPlayerNumber() {
