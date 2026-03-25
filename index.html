@@ -268,7 +268,13 @@
             
             <div class="input-group">
                 <label for="playerName">Enter Your Name:</label>
-                <input type="text" id="playerName" placeholder="e.g., Alex" value="Player">
+                <input
+                    type="text"
+                    id="playerName"
+                    placeholder="e.g., Alex"
+                    value="Player"
+                    onfocus="if (this.value === 'Player') this.value = ''"
+                >
             </div>
 
             <button onclick="startGame()">Start Game</button>
@@ -391,6 +397,7 @@
             document.getElementById('playerTurnSection').style.display = 'block';
             document.getElementById('computerTurnSection').style.display = 'none';
             document.getElementById('playerGuess').value = '';
+            updateTurnIndicator();
 
             const responseEl = document.getElementById('playerResponse');
             responseEl.className = 'response';
