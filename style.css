@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.setup-screen,
+.game-screen {
+    display: none;
+}
+
+.setup-screen.active,
+.game-screen.active {
+    display: block;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.game-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+}
+
+.game-section h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.player-info {
+    background: #e8eaf6;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.player-info strong {
+    color: #667eea;
+}
+
+.guess-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.guess-input-group input {
+    flex: 1;
+}
+
+.guess-input-group button {
+    flex: 0 0 100px;
+    padding: 12px;
+}
+
+.feedback-buttons button {
+    flex: 1;
+}
+
+.response {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+}
+
+.response.show {
+    display: block;
+}
+
+.response.higher {
+    background: #c8e6c9;
+    color: #2e7d32;
+    border: 2px solid #4caf50;
+}
+
+.response.lower {
+    background: #ffccbc;
+    color: #d84315;
+    border: 2px solid #ff6f00;
+}
+
+.response.correct {
+    background: #fff9c4;
+    color: #f57f17;
+    border: 2px solid #fbc02d;
+    font-size: 1.2em;
+}
+
+.response.found {
+    background: #c8e6c9;
+    color: #1b5e20;
+    border: 2px solid #4caf50;
+    font-size: 1.2em;
+}
+
+.round-display {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+}
+
+.winner-screen {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #fff9c4 0%, #ffeb3b 100%);
+    border-radius: 15px;
+}
+
+.winner-screen.active {
+    display: block;
+}
+
+.winner-screen h2 {
+    font-size: 3em;
+    color: #f57f17;
+    margin-bottom: 20px;
+}
+
+.winner-screen .emoji {
+    font-size: 4em;
+    margin: 20px 0;
+}
+
+.winner-screen p {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-group button {
+    flex: 1;
+}
+
+.button-group button.secondary {
+    background: linear-gradient(135deg, #999 0%, #666 100%);
+}
+
+.turn-indicator {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #667eea;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}
