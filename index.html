@@ -492,7 +492,7 @@
             responseDiv.className = 'response show';
 
             if (response === 'correct') {
-                responseDiv.textContent = `Computer found your number (${game.playerNumber}).`;
+                responseDiv.textContent = `Computer found the player number (${game.playerNumber}).`;
                 responseDiv.classList.add('found');
                 game.computerFound = true;
                 finishGame('computer');
@@ -501,11 +501,11 @@
 
             if (response === 'higher') {
                 game.computerMin = Math.max(game.computerMin, computerGuess + 1);
-                responseDiv.textContent = `Your number is HIGHER than ${computerGuess}.`;
+                responseDiv.textContent = `Player number is HIGHER than ${computerGuess}.`;
                 responseDiv.classList.add('higher');
             } else {
                 game.computerMax = Math.min(game.computerMax, computerGuess - 1);
-                responseDiv.textContent = `Your number is LOWER than ${computerGuess}.`;
+                responseDiv.textContent = `Player number is LOWER than ${computerGuess}.`;
                 responseDiv.classList.add('lower');
             }
 
@@ -534,7 +534,7 @@
                 winnerDetails.textContent = `You found the Computer's number in ${game.round} round(s).`;
             } else {
                 winnerMessage.textContent = 'Computer Wins!';
-                winnerDetails.textContent = `The Computer found your number (${game.playerNumber}) in ${game.round} round(s).`;
+                winnerDetails.textContent = `The Computer found the player number (${game.playerNumber}) in ${game.round} round(s).`;
             }
 
             document.querySelector('.game-screen').classList.remove('active');
