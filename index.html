@@ -321,9 +321,9 @@
                     <p class="player-info" id="computerGuessDisplay"></p>
                     <p class="player-info" id="computerHelpText">Choose feedback based on your secret number compared to computer's guess.</p>
                     <div class="guess-input-group">
-                        <button style="flex: 1;" onclick="computerResponse('higher')">My number is Higher</button>
-                        <button style="flex: 1;" onclick="computerResponse('lower')">My number is Lower</button>
-                        <button style="flex: 1;" onclick="computerResponse('correct')">Computer is Correct</button>
+                        <button style="flex: 1;" onclick="computerResponse('higher')">Player number is Higher</button>
+                        <button style="flex: 1;" onclick="computerResponse('lower')">Player number is Lower</button>
+                        <button style="flex: 1;" onclick="computerResponse('correct')">Exact Match</button>
                     </div>
                     <div class="response" id="computerResponse"></div>
                 </div>
@@ -478,7 +478,7 @@
             document.getElementById('computerGuessDisplay').textContent =
                 `Computer guesses: ${computerGuess} (range ${game.computerMin}-${game.computerMax})`;
             document.getElementById('computerHelpText').textContent =
-                `If your secret number is bigger than ${computerGuess}, click "My number is Higher". If smaller, click "My number is Lower". If equal, click "Computer is Correct".`;
+                `If player's secret number is bigger than ${computerGuess}, click "Player number is Higher". If smaller, click "Player number is Lower". If equal, click "Exact Match".`;
 
             const responseEl = document.getElementById('computerResponse');
             responseEl.className = 'response';
